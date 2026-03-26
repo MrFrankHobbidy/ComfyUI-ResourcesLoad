@@ -1,0 +1,234 @@
+{
+  "id": "f79b5d7c-ed73-405d-881d-b90e4ed9698f",
+  "revision": 0,
+  "last_node_id": 17,
+  "last_link_id": 10,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "Rload",
+      "pos": [
+        1159.419518852459,
+        518.9993424662617
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Rload"
+      },
+      "widgets_values": [
+        "",
+        "ComfyUI_00001_"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "PreviewAny",
+      "pos": [
+        1549.2006226837455,
+        486.88180553453924
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 10
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Rload",
+      "pos": [
+        1160.1382597350425,
+        786.9266484598415
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Rload"
+      },
+      "widgets_values": [
+        "",
+        "ComfyUI_00001_"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "RloadImageC",
+      "pos": [
+        1504.5630400514651,
+        786.9266484598415
+      ],
+      "size": [
+        181.03252704425154,
+        26
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RloadImageC"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "PreviewImage",
+      "pos": [
+        1759.1942012862728,
+        762.3370511953223
+      ],
+      "size": [
+        319.142166611063,
+        280.20150435008793
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    }
+  ],
+  "links": [
+    [
+      7,
+      15,
+      0,
+      14,
+      0,
+      "*"
+    ],
+    [
+      8,
+      14,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      13,
+      0,
+      17,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "SaveImages",
+      "bounding": [
+        1150.1382597350425,
+        688.7370511953222,
+        938.1981081622935,
+        363.80150435008795
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "SaveAny",
+      "bounding": [
+        1149.419518852459,
+        413.2818055345392,
+        619.7811038312864,
+        249.6
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7266959378037668,
+      "offset": [
+        -715.943963887985,
+        -204.73405814401315
+      ]
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
