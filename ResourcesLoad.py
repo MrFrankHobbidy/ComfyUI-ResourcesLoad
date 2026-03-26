@@ -46,11 +46,13 @@ class Rload:
         npy_path = os.path.join(full_output_folder, file)
 
         npyg = np.load(npy_path, allow_pickle=True)
+        # print(f"{npyg}")
         try:
-            anything = torch.from_numpy(npyg)[None,]
+            anything = torch.from_numpy(npyg[0])[None,]
         except Exception as e:
             anything = npyg
             # print(f"{e}")
+        # print(f"{anything}")
         return (anything, )
 
 class RloadImageC:
