@@ -64,7 +64,7 @@
       "widgets_values": [
         null,
         null,
-        false
+        null
       ]
     },
     {
@@ -158,7 +158,8 @@
       "outputs": [],
       "properties": {
         "Node name for S&R": "PreviewImage"
-      }
+      },
+      "widgets_values": []
     }
   ],
   "links": [
@@ -190,7 +191,7 @@
   "groups": [
     {
       "id": 1,
-      "title": "SaveImages",
+      "title": "LoadImages",
       "bounding": [
         1150.1382597350425,
         688.7370511953222,
@@ -203,7 +204,7 @@
     },
     {
       "id": 3,
-      "title": "SaveAny",
+      "title": "LoadAny",
       "bounding": [
         1149.419518852459,
         413.2818055345392,
@@ -218,10 +219,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7266959378037668,
+      "scale": 0.8707902619603163,
       "offset": [
-        -715.943963887985,
-        -204.73405814401315
+        -736.9204462032083,
+        -345.93901386606086
       ]
     },
     "frontendVersion": "1.41.21",
