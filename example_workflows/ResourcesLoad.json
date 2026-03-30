@@ -1,8 +1,8 @@
 {
   "id": "f79b5d7c-ed73-405d-881d-b90e4ed9698f",
   "revision": 0,
-  "last_node_id": 17,
-  "last_link_id": 10,
+  "last_node_id": 24,
+  "last_link_id": 15,
   "nodes": [
     {
       "id": 13,
@@ -48,7 +48,7 @@
         166
       ],
       "flags": {},
-      "order": 2,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -71,8 +71,8 @@
       "id": 15,
       "type": "Rload",
       "pos": [
-        1160.1382597350425,
-        786.9266484598415
+        1160.0962013778014,
+        949.5465715542281
       ],
       "size": [
         270,
@@ -103,15 +103,15 @@
       "id": 14,
       "type": "RloadImageC",
       "pos": [
-        1504.5630400514651,
-        786.9266484598415
+        1504.520981694224,
+        949.5465715542281
       ],
       "size": [
         181.03252704425154,
         26
       ],
       "flags": {},
-      "order": 3,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -138,15 +138,15 @@
       "id": 16,
       "type": "PreviewImage",
       "pos": [
-        1759.1942012862728,
-        762.3370511953223
+        1759.1521429290317,
+        924.9569742897089
       ],
       "size": [
         319.142166611063,
         280.20150435008793
       ],
       "flags": {},
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -160,6 +160,163 @@
         "Node name for S&R": "PreviewImage"
       },
       "widgets_values": []
+    },
+    {
+      "id": 19,
+      "type": "PreviewAny",
+      "pos": [
+        907.343336180242,
+        486.8881732591391
+      ],
+      "size": [
+        210,
+        166
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 14
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 21,
+      "type": "RloadImageC",
+      "pos": [
+        543.7152733224702,
+        949.5485775394867
+      ],
+      "size": [
+        181.03252704425154,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RloadImageC"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 22,
+      "type": "PreviewImage",
+      "pos": [
+        798.346434557278,
+        924.9589802749675
+      ],
+      "size": [
+        319.142166611063,
+        280.20150435008793
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 23,
+      "type": "RloadImage",
+      "pos": [
+        522.109215873074,
+        511.5767055774286
+      ],
+      "size": [
+        271.67041227950153,
+        306
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RloadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "RloadImage",
+      "pos": [
+        202.02306892378846,
+        949.5485775394867
+      ],
+      "size": [
+        271.67041227950153,
+        306
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RloadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_00001_.png",
+        "image"
+      ]
     }
   ],
   "links": [
@@ -186,15 +343,39 @@
       17,
       0,
       "*"
+    ],
+    [
+      13,
+      21,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      23,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      15,
+      24,
+      0,
+      21,
+      0,
+      "*"
     ]
   ],
   "groups": [
     {
       "id": 1,
-      "title": "LoadImages",
+      "title": "LoadImages4NPY",
       "bounding": [
-        1150.1382597350425,
-        688.7370511953222,
+        1150.0962013778014,
+        851.3569742897083,
         938.1981081622935,
         363.80150435008795
       ],
@@ -204,7 +385,7 @@
     },
     {
       "id": 3,
-      "title": "LoadAny",
+      "title": "LoadAny4NPY",
       "bounding": [
         1149.419518852459,
         413.2818055345392,
@@ -214,15 +395,41 @@
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "LoadImages4Image",
+      "bounding": [
+        192.02306892378843,
+        851.3589802749669,
+        935.4655322445514,
+        414.1895972645193
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "LoadAny4Image",
+      "bounding": [
+        512.1092158730739,
+        413.2881732591391,
+        615.2341203071676,
+        414.2885323182894
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
     }
   ],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8707902619603163,
+      "scale": 0.6542376122917519,
       "offset": [
-        -736.9204462032083,
-        -345.93901386606086
+        14.128487388919996,
+        -284.38576522680296
       ]
     },
     "frontendVersion": "1.41.21",
