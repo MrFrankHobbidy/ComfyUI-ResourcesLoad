@@ -5,7 +5,7 @@ import numpy as np
 import node_helpers
 import torch
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, PngImagePlugin
 from io import BytesIO
 
 import re
@@ -72,6 +72,7 @@ class RloadImage:
     CATEGORY = "ResourcesLoad"
 
     def load_image(self, image):
+        PngImagePlugin.MAX_TEXT_MEMORY = 12800 * 1024 * 1024
         image_path = folder_paths.get_annotated_filepath(image)
         img = node_helpers.pillow(Image.open, image_path)
         npyb = base64.b64decode(re.sub(r"\"b\'(.*?)\'\"", r"\1", img.info.get("ResourcesSave")))
