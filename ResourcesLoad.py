@@ -39,7 +39,40 @@ class Rload:
 
     # def load(self, npy, anything=None):
         # npy_path = folder_paths.get_annotated_filepath(npy)
-    def load(self, file_path="", file_name="ComfyUI_00001_", anything=None):
+    def load(self, file_path="", file_name="ComfyUI_00001_"):
+        filename_prefix = file_path + file_name
+        full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(
+            filename_prefix,
+            folder_paths.get_output_directory()
+        )
+        file = f"{filename}.npy"
+        npy_path = os.path.join(full_output_folder, file)
+
+        npyg = np.load(npy_path, allow_pickle=True)
+        try:
+            anything = torch.from_numpy(npyg[0])[None,]
+        except Exception as e:
+            anything = npyg
+            # print(f"{e}")
+        return (anything, )
+
+class RloadInput:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "anything": (any, {}),
+                "file_path": ("STRING", {"default": ""}),
+                "file_name": ("STRING", {"default": "ComfyUI_00001_"})
+            }
+        }
+
+    RETURN_TYPES = (any, )
+    RETURN_NAMES = ("output", )
+    FUNCTION = "loadi"
+    CATEGORY = "ResourcesLoad"
+
+    def loadi(self, anything=None, file_path="", file_name="ComfyUI_00001_"):
         filename_prefix = file_path + file_name
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(
             filename_prefix,
@@ -117,11 +150,13 @@ class RloadImageC:
 
 NODE_CLASS_MAPPINGS = {
     "Rload": Rload,
+    "RloadInput": RloadInput,
     "RloadImage": RloadImage,
     "RloadImageC": RloadImageC,
 }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "Rload": "RloadNpy",
+    "RloadInput": "RloadNpyInput",
     "RloadImage": "RloadImage",
     "RloadImageC": "RloadImageC",
 }
